@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="zxx">
 
 <head>
-	<title>Snacks Restaurants Category Flat Bootstrap Responsive Web Template | Home :: W3layouts</title>
+	<title>Hogwarts Cafe | Rain</title>
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
@@ -50,12 +50,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 	<!-- about -->
-	<div class="about py-5" id="about">
+	<div class="about py-5" id="about" style="font-family: papyrus">
 		<div class="container py-xl-5 py-lg-3">
 			<h3 class="title text-center text-dark mb-sm-5 mb-4">
-				<span>Your Cart</span></h3>
+				<span style="font-family: papyrus">Your Cart</span></h3>
 			<div class="row about-bottom-w3l text-center pt-lg-5">
-				<div class="col-sm-6 about-grid" style="margin:auto">
+				<div class="col-sm-6 about-grid">
 					<div class="about-grid-main">
 						<table class="table">
                             <thead>
@@ -72,9 +72,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                           </table>
 					</div>
 				</div>
+				<div class="col-sm-6 about-grid mt-sm-0 mt-4">
+                    <div class="about-grid-main">
+						<h4 class="mb-3" style="font-family: papyrus; color:black;font-size: 26px;">Pay Us through
+								<i class="fas fa-long-arrow-alt-right ml-3"></i> </h4>
+                        <img src="images/QR.png" alt="" class="img-fluid">
+                        <h4 style="font-family: papyrus; color:black;">+91-8080888995</h4>
+                        <!-- <a href="#" class="button-w3ls mt-4" data-toggle="modal" data-target="#exampleModalCenter1">Read More
+                            <i class="fas fa-long-arrow-alt-right ml-3"></i>
+                        </a> -->
+                    </div>
+                </div>
 			</div>
+			
 			<button  onclick="getSelectedCheckboxes()" class="btn btn-danger" id="btn_test" style="position: absolute; left: 50%;
-			transform: translateX(-50%); margin-bottom: 10px;"> 
+			transform: translateX(-50%); margin-top: 10px;"> 
 					Copy Cart to Clipboard
 			</button>
 		</div>
@@ -131,7 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- copyright -->
 			<div class="copy_right">
 				<p class="text-center text-white py-sm-4 py-3">©2018. All rights reserved | Design by
-					<a href=""> Arpit and Nishi </a>
+					<a href="https://www.linkedin.com/in/arpit621/"> Arpit </a> and <a href="https://www.linkedin.com/in/chauhannishh/"> Nishi </a>
 				</p>
 	
 			</div>
@@ -150,13 +162,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var input = "<tr><td scope='row'>"+count+"</td><td>"+key+"</td><th>"+retrievedObject[key]+"</th></tr>";
 				cpingText += count + "." + key + " "
 				count++;
-				totalPrice += retrievedObject[key];
+				totalPrice += parseInt(retrievedObject[key]);
 				document.getElementById('cartTable').insertAdjacentHTML('beforeend', input);
         		}
-    		}    
+    		}
+			var estimatedTime = 20 + count*2;     
 			var zinput = "<tr><td></td><td>Total: </td><th>"+totalPrice+"</th></tr>";
 			document.getElementById('cartTable').insertAdjacentHTML('beforeend', zinput);
-    
+			var zainput = "<tr><td></td><td>Estimated Time: </td><th>"+estimatedTime+" minutes</th></tr>";
+			document.getElementById('cartTable').insertAdjacentHTML('beforeend', zainput);
 			console.log(cpingText);
 
 function getSelectedCheckboxes(chkboxName) {
