@@ -76,7 +76,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 	</div>
-	<!-- //about -->
+    <!-- //about -->
+    <button id="btn_test" type="button" onclick="getSelectedCheckboxes()">Copy Cart to Clipboard</button>
 
 	<!-- footer -->
 	<footer class="pt-5">
@@ -169,14 +170,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 var retrievedObject = localStorage.getItem('testObject');
                         retrievedObject = JSON.parse(retrievedObject);
             var count = 1;
+            var cpingText = "";
+            var totalPrice = 0;
            for (var key in retrievedObject) {
    if (retrievedObject.hasOwnProperty(key)) {
 
        var input = "<tr><td scope='row'>"+count+"</td><td>"+key+"</td><th>"+retrievedObject[key]+"</th></tr>";
+       cpingText += count + "." + key + " "
     count++;
+    totalPrice += retrievedObject[key];
     document.getElementById('cartTable').insertAdjacentHTML('beforeend', input);
         }
-    }                             
+    }    
+    var zinput = "<tr><td></td><td>Total: </td><th>"+totalPrice+"</th></tr>";
+    document.getElementById('cartTable').insertAdjacentHTML('beforeend', zinput);
+    
+console.log(cpingText);
+
+function getSelectedCheckboxes(chkboxName) {
+
+  // Create a dummy input to copy the string array inside it
+  var dummy = document.createElement("input");
+
+  // Add it to the document
+  document.body.appendChild(dummy);
+
+  // Set its ID
+  dummy.setAttribute("id", "dummy_id");
+
+  // Output the array into it
+  document.getElementById("dummy_id").value=cpingText;
+
+  // Select it
+  dummy.select();
+
+  // Copy its contents
+  document.execCommand("copy");
+
+  // Remove it as its not needed anymore
+  document.body.removeChild(dummy);
+}ore
+  document.body.removeChild(dummy);            
         </script>
 	<!-- Js files -->
 	<!-- JavaScript -->
