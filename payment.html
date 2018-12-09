@@ -72,120 +72,92 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                           </table>
 					</div>
 				</div>
-				
 			</div>
+			<button  onclick="getSelectedCheckboxes()" class="btn btn-danger" id="btn_test" style="position: absolute; left: 50%;
+			transform: translateX(-50%); margin-bottom: 10px;"> 
+					Copy Cart to Clipboard
+			</button>
 		</div>
+		
 	</div>
-    <!-- //about -->
-    <button id="btn_test" type="button" onclick="getSelectedCheckboxes()">Copy Cart to Clipboard</button>
+	<!-- //about -->
+	
 
 	<!-- footer -->
 	<footer class="pt-5">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="row footer-grids py-4">
-				<div class="col-lg-4 footer-grid text-left">
-					<div class="footer-logo">
-						<h2 class="mb-3">
-							<a class="logo text-white" href="index.html">
-								<i class="fas fa-utensils mr-2"></i>Snacks</a>
-						</h2>
+			<div class="container py-xl-5 py-lg-3">
+				<div class="row footer-grids py-4">
+					<div class="col-lg-4 footer-grid text-left">
+						<div class="footer-logo">
+							<h2 class="mb-3">
+								<a class="logo text-white" href="index.html">
+										<img src="images/hogwartsLogo.jpg" alt="" class="img-fluid" 
+										style="border-radius: 50%; height: 75px; width: 75px;"> Hogwarts Cafe</a>
+							</h2>
+						</div>
+					</div>
+					<div class="col-lg-2 col-6 footer-grid"></div>
+					<div class="col-lg-2 col-6 footer-grid"></div>
+					<div class="col-lg-2 col-6  footer-grid my-lg-0 my-4">
+						<h3 class="mb-sm-4 mb-3 pb-3">Home</h3>
+						<ul class="list-unstyled">
+							<li>
+								<a href="index.html">Index</a>
+							</li>
+							<li class="my-2">
+								<a class="scroll" href="#about">About</a>
+							</li>
+							<li class="my-2">
+								<a class="scroll" href="#gallery">Gallery</a>
+							</li>
+							<li>
+								<a class="scroll" href="#contact">Contact Us</a>
+							</li>
+						</ul>
+					</div>				
+					<div class="col-lg-2 col-6 footer-grid footer-contact">
+						<h3 class="mb-sm-4 mb-3 pb-3"> Contact Us</h3>
+						<ul class="list-unstyled">
+							<li>
+								086025 87838
+							</li>
+							<li class="mt-2">
+								<a href="https://www.instagram.com/cafehogwarts/">@cafehogwarts</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-lg-2 col-6  footer-grid my-lg-0 my-4">
-					<h3 class="mb-sm-4 mb-3 pb-3">Home</h3>
-					<ul class="list-unstyled">
-						<li>
-							<a href="index.html">Index</a>
-						</li>
-						<li class="my-2">
-							<a class="scroll" href="#about">About</a>
-						</li>
-						<li>
-							<a class="scroll" href="#services">Services</a>
-						</li>
-						<li class="my-2">
-							<a class="scroll" href="#gallery">Gallery</a>
-						</li>
-						<li>
-							<a class="scroll" href="#contact">Contact Us</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-lg-2 col-6 footer-grid my-lg-0 my-4">
-					<h3 class="mb-sm-4 mb-3 pb-3"> Navigation </h3>
-					<ul class="list-unstyled">
-						<li>
-							<a class="scroll" href="#services">Advantages</a>
-						</li>
-						<li class="my-2">
-							<a class="scroll" href="#specials">Specials</a>
-						</li>
-						<li>
-							<a class="scroll" href="#some">Some More</a>
-						</li>
-						<li class="my-2">
-							<a class="scroll" href="#gallery">Gallery</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-lg-2 col-6 footer-grid">
-					<h3 class="mb-sm-4 mb-3 pb-3"> Company</h3>
-					<ul class="list-unstyled">
-						<li>
-							<a href="#">Link Here</a>
-						</li>
-						<li class="my-2">
-							<a href="#">Link Here</a>
-						</li>
-						<li>
-							<a href="#">Link Here</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-lg-2 col-6 footer-grid footer-contact">
-					<h3 class="mb-sm-4 mb-3 pb-3"> Contact Us</h3>
-					<ul class="list-unstyled">
-						<li>
-							+01(24) 8543 8088
-						</li>
-						<li class="mt-2">
-							<a href="mailto:info@example.com">info@example.com</a>
-						</li>
-					</ul>
-				</div>
 			</div>
-		</div>
-		<!-- copyright -->
-		<div class="copy_right">
-			<p class="text-center text-white py-sm-4 py-3">© 2018 Snacks. All rights reserved | Design by
-				<a href="http://w3layouts.com/">W3layouts</a>
-			</p>
-
-		</div>
-		<!-- //copyright -->
+			<!-- copyright -->
+			<div class="copy_right">
+				<p class="text-center text-white py-sm-4 py-3">©2018. All rights reserved | Design by
+					<a href=""> Arpit and Nishi </a>
+				</p>
+	
+			</div>
+			<!-- //copyright -->
 	</footer>
 	<!-- //footer -->
 
     <script>
-                                var retrievedObject = localStorage.getItem('testObject');
-                        retrievedObject = JSON.parse(retrievedObject);
+            var retrievedObject = localStorage.getItem('testObject');
+            retrievedObject = JSON.parse(retrievedObject);
             var count = 1;
             var cpingText = "";
             var totalPrice = 0;
-           for (var key in retrievedObject) {
-   if (retrievedObject.hasOwnProperty(key)) {
-
-       var input = "<tr><td scope='row'>"+count+"</td><td>"+key+"</td><th>"+retrievedObject[key]+"</th></tr>";
-       cpingText += count + "." + key + " "
-    count++;
-    totalPrice += retrievedObject[key];
-    document.getElementById('cartTable').insertAdjacentHTML('beforeend', input);
-        }
-    }    
-    var zinput = "<tr><td></td><td>Total: </td><th>"+totalPrice+"</th></tr>";
-    document.getElementById('cartTable').insertAdjacentHTML('beforeend', zinput);
+           	for (var key in retrievedObject) {
+   			if (retrievedObject.hasOwnProperty(key)) {
+				var input = "<tr><td scope='row'>"+count+"</td><td>"+key+"</td><th>"+retrievedObject[key]+"</th></tr>";
+				cpingText += count + "." + key + " "
+				count++;
+				totalPrice += retrievedObject[key];
+				document.getElementById('cartTable').insertAdjacentHTML('beforeend', input);
+        		}
+    		}    
+			var zinput = "<tr><td></td><td>Total: </td><th>"+totalPrice+"</th></tr>";
+			document.getElementById('cartTable').insertAdjacentHTML('beforeend', zinput);
     
-console.log(cpingText);
+			console.log(cpingText);
 
 function getSelectedCheckboxes(chkboxName) {
 
